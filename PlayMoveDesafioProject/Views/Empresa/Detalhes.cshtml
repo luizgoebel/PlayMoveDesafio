@@ -1,0 +1,30 @@
+﻿@model Empresa
+@{
+    ViewData["Title"] = "Detalhes";
+}
+
+<body>
+    <div class="col-xl-12 col-lg-12 col-sm-12  layout-spacing">
+        <div class="widget-content widget-content-area br-6">
+            <form asp-action="Detalhes">
+                <h5>Visualização de <b>@Model.NomeFantasia</b> </h5>
+                <hr />
+                <div class="row">
+                    <div class="form-group col-md-4">
+                        <label asp-for="NomeFantasia"></label>
+                        <input asp-for="NomeFantasia" class="form-control" readonly>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label asp-for="CNPJ"></label>
+                        <input asp-for="CNPJ" class="form-control" readonly>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label asp-for="UF"></label>
+                        <input asp-for="UF" class="form-control" readonly>
+                    </div>
+                </div>
+                <a href="~/Empresa/Index" class="btn btn-primary">Voltar</a>
+            </form>
+        </div>
+    </div>
+</body>

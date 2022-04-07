@@ -1,0 +1,45 @@
+﻿@model Fornecedor
+@{
+    ViewData["Title"] = "Cadastrar";
+}
+
+<body>
+    <div class="col-xl-12 col-lg-12 col-sm-12  layout-spacing">
+        <div class="widget-content widget-content-area br-6">
+            <form asp-action="Cadastrar">
+                <div asp-validation-summary="ModelOnly"></div>
+                <div class="row">
+                    <div class="form-group col-md-4">
+                        <label asp-for="Nome"></label>
+                        <input asp-for="Nome" class="form-control" placeholder="Digite o Nome">
+                        <span asp-validation-for="Nome" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label asp-for="CnpjCpf"></label>
+                        <input asp-for="CnpjCpf" class="form-control" placeholder="Digite o CNPJ ou CPF">
+                        <span asp-validation-for="CnpjCpf" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group col-md-4">
+                        <label asp-for="Telefone"></label>
+                        <input asp-for="Telefone" class="form-control" placeholder="Digite o Telefone">
+                        <span asp-validation-for="Telefone" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label asp-for="EmpresaId"></label>
+                        <select asp-for="@Model.EmpresaId" asp-items="ViewBag.empresaID" class="form-control" required>
+                            <option selected hidden>Selecionar</option>
+                        </select>
+                        <span asp-validation-for="EmpresaId" class="text-danger"></span>
+                    </div>
+                </div>
+                <input type="submit" name="name" class="btn btn-success" value="Cadastrar" />
+                <a href="~/Fornecedor/Index" class="btn btn-primary">Voltar</a>
+            </form>
+        </div>
+    </div>
+</body>
+
+
+
+
